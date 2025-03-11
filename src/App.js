@@ -328,7 +328,7 @@ function App() {
                                 {/* Stats */}
                                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
                                     <div className="text-center p-4 border border-gray-700 rounded-lg bg-gray-800/50 glow">
-                                        <div className="text-2xl font-bold text-blue-400">5+</div>
+                                        <div className="text-2xl font-bold text-blue-400">8+</div>
                                         <div className="text-sm text-gray-400">Years Experience</div>
                                     </div>
                                     <div className="text-center p-4 border border-gray-700 rounded-lg bg-gray-800/50 glow">
