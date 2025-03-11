@@ -6,11 +6,13 @@ import SpaceBackground from './components/SpaceBackground';
 import RocketCursor from './components/RocketCursor';
 import AnimatedPlanet from './components/AnimatedPlanet';
 import './planet-animations.css';
+import ProjectVideo from './components/ProjectVideo';
 
 function App() {
     const [activeSection, setActiveSection] = useState('home');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [showDemoVideo, setShowDemoVideo] = useState(false);
 
     // Handle scroll events to update active section and header style
     useEffect(() => {
@@ -387,11 +389,22 @@ function App() {
                             {projects.map(project => (
                                 <div key={project.id} className="bg-gray-800/70 rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-2 glow">
                                     {/* Project Image */}
-                                    <div className="aspect-video overflow-hidden">
+                                    {/* Project Image */}
+                                    <div className="aspect-video overflow-hidden relative">
+                                        {(project.id === 2 || project.id === 4|| project.id === 1 || project.id === 3) ? (
+                                            <div className="absolute inset-0 bg-blue-900/30 flex flex-col items-center justify-center border-b border-blue-500/30">
+                                                <svg className="w-12 h-12 text-blue-400 mb-3 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg>
+                                                <h3 className="text-xl font-bold text-blue-300 mb-2">Interactive Demo</h3>
+                                                <p className="text-blue-200 text-center px-4">Coming Soon</p>
+                                            </div>
+                                        ) : null}
                                         <img
                                             src={project.image}
                                             alt={project.title}
-                                            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                                            className={`w-full h-full object-cover transition-transform duration-300 hover:scale-105 ${(project.id === 2 || project.id === 4) ? 'opacity-20' : ''}`}
                                         />
                                     </div>
 
@@ -422,6 +435,15 @@ function App() {
                         </span>
                                             ))}
                                         </div>
+
+                                        {/* Coming Soon Banner - for all projects or specific ones */}
+                                        {(project.id === 2 || project.id === 4) && (
+                                            <div className="mt-4 mb-2 text-center">
+      <span className="inline-block bg-blue-500/20 text-blue-300 px-3 py-1 rounded-md text-sm">
+        Interactive Demo Coming Soon
+      </span>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             ))}
