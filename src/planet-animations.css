@@ -1,0 +1,344 @@
+/* src/planet-animations.css */
+
+/* Planet rotation animation */
+.planet-rotation {
+    animation: rotate 180s linear infinite;
+}
+
+.night-side {
+    animation: nightRotate 180s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes nightRotate {
+    from { opacity: 0.7; }
+    50% { opacity: 0; }
+    to { opacity: 0.7; }
+}
+
+/* Cosmic background glow */
+.cosmic-glow {
+    background: radial-gradient(circle at center, rgba(56, 189, 248, 0) 0%, rgba(56, 189, 248, 0.1) 70%, rgba(56, 189, 248, 0.2) 90%, rgba(56, 189, 248, 0.3) 100%);
+    filter: blur(10px);
+    z-index: -1;
+    transform: scale(1.2);
+}
+
+/* Advanced planet glow effect */
+.advanced-glow {
+    box-shadow:
+            0 0 10px 5px rgba(56, 189, 248, 0.1),
+            0 0 20px 10px rgba(56, 189, 248, 0.05),
+            0 0 30px 15px rgba(56, 189, 248, 0.025);
+}
+
+/* Background stars twinkling */
+.background-star {
+    animation: starTwinkle 3s ease-in-out infinite;
+}
+
+@keyframes starTwinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+}
+
+/* City lights twinkling */
+.city-light {
+    animation: twinkle 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 2px rgba(255, 204, 0, 0.5));
+}
+
+.twinkle-slow {
+    animation-duration: 5s;
+}
+
+.glow-effect {
+    filter: drop-shadow(0 0 4px rgba(255, 204, 0, 0.7));
+}
+
+.major-city {
+    filter: drop-shadow(0 0 6px rgba(255, 204, 0, 0.8));
+}
+
+.spaceport {
+    filter: drop-shadow(0 0 8px rgba(100, 200, 255, 0.9));
+}
+
+@keyframes twinkle {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+/* Spaceship animations */
+.animate-launch-1 {
+    animation: launch1 8s ease-in-out infinite;
+}
+
+.animate-launch-2 {
+    animation: launch2 12s ease-in-out infinite;
+    animation-delay: 4s;
+}
+
+.animate-orbit {
+    animation: orbit 20s linear infinite;
+}
+
+.animate-orbit-2 {
+    animation: orbit2 25s linear infinite;
+    animation-delay: 10s;
+}
+
+@keyframes launch1 {
+    0% { transform: translate(0, 0) scale(1); opacity: 1; }
+    20% { transform: translate(-10px, -50px) scale(0.9); opacity: 0.9; }
+    40% { transform: translate(-30px, -100px) scale(0.8); opacity: 0.8; }
+    60% { transform: translate(-60px, -150px) scale(0.7); opacity: 0.7; }
+    80% { transform: translate(-100px, -200px) scale(0.5); opacity: 0.4; }
+    100% { transform: translate(-150px, -250px) scale(0.3); opacity: 0; }
+}
+
+@keyframes launch2 {
+    0% { transform: translate(0, 0) scale(1); opacity: 1; }
+    20% { transform: translate(20px, -60px) scale(0.9); opacity: 0.9; }
+    40% { transform: translate(50px, -120px) scale(0.8); opacity: 0.8; }
+    60% { transform: translate(80px, -180px) scale(0.7); opacity: 0.7; }
+    80% { transform: translate(120px, -240px) scale(0.5); opacity: 0.4; }
+    100% { transform: translate(160px, -300px) scale(0.3); opacity: 0; }
+}
+
+@keyframes orbit {
+    0% { transform: rotate(0deg) translateX(120px) rotate(0deg) scale(1); }
+    100% { transform: rotate(360deg) translateX(120px) rotate(-360deg) scale(1); }
+}
+
+@keyframes orbit2 {
+    0% { transform: rotate(180deg) translateX(90px) rotate(-180deg) scale(1); }
+    100% { transform: rotate(-180deg) translateX(90px) rotate(180deg) scale(1); }
+}
+
+/* Development stages transition */
+.city-lights-stage-0,
+.city-lights-stage-1,
+.city-lights-stage-2,
+.city-lights-stage-3,
+.city-lights-stage-4 {
+    transition: opacity 2s ease-in-out;
+}
+
+/* Clouds drifting animation */
+.cloud-1 {
+    animation: cloudDrift1 40s linear infinite;
+}
+
+.cloud-2 {
+    animation: cloudDrift2 50s linear infinite;
+}
+
+.cloud-3 {
+    animation: cloudDrift3 45s linear infinite;
+}
+
+@keyframes cloudDrift1 {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes cloudDrift2 {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-25px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes cloudDrift3 {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(15px); }
+    100% { transform: translateX(0); }
+}
+
+/* Ocean waves subtle animation */
+.ocean-waves {
+    animation: oceanWaves 15s ease-in-out infinite;
+}
+
+@keyframes oceanWaves {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.01); }
+}
+
+/* Continents subtle plate tectonics movement */
+.continent {
+    animation: tectonics 20s ease-in-out infinite;
+}
+
+.island {
+    animation: tectonics 20s ease-in-out infinite;
+    animation-delay: 5s;
+}
+
+@keyframes tectonics {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(2px, 1px); }
+}
+
+/* Planet ring subtle wobble */
+.planet-ring {
+    animation: ringWobble 30s ease-in-out infinite;
+}
+
+@keyframes ringWobble {
+    0%, 100% { transform: rotate(-15deg); }
+    50% { transform: rotate(-18deg); }
+}
+
+/* Laser defense system animations */
+.laser-shot-1 {
+    animation: laserPulse 4s linear infinite;
+}
+
+.laser-shot-2 {
+    animation: laserPulse 3s linear infinite;
+    animation-delay: 1.5s;
+}
+
+@keyframes laserPulse {
+    0%, 100% { opacity: 0; }
+    10%, 20% { opacity: 0.8; }
+    30% { opacity: 0; }
+}
+
+/* Satellites orbiting animation */
+.satellite-1 {
+    animation: satelliteOrbit1 30s linear infinite;
+}
+
+.satellite-2 {
+    animation: satelliteOrbit2 40s linear infinite;
+}
+
+@keyframes satelliteOrbit1 {
+    0% { transform: rotate(0deg) translateX(130px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(130px) rotate(-360deg); }
+}
+
+@keyframes satelliteOrbit2 {
+    0% { transform: rotate(180deg) translateX(150px) rotate(-180deg); }
+    100% { transform: rotate(-180deg) translateX(150px) rotate(180deg); }
+}
+
+/* Shooting star animations */
+.shooting-star-1 {
+    animation: shootingStar1 10s linear infinite;
+    animation-delay: 3s;
+}
+
+.shooting-star-2 {
+    animation: shootingStar2 15s linear infinite;
+    animation-delay: 7s;
+}
+
+@keyframes shootingStar1 {
+    0%, 100% { opacity: 0; }
+    10%, 15% { opacity: 0.8; }
+    20% { opacity: 0; }
+}
+
+@keyframes shootingStar2 {
+    0%, 100% { opacity: 0; }
+    50%, 55% { opacity: 0.8; }
+    60% { opacity: 0; }
+}
+
+/* Orbital station pulsing glow */
+.orbital-station {
+    animation: stationPulse 4s ease-in-out infinite;
+}
+
+@keyframes stationPulse {
+    0%, 100% { filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8)); }
+    50% { filter: drop-shadow(0 0 4px rgba(56, 189, 248, 0.9)); }
+}
+
+/* Spaceport complex pulsing activity */
+.spaceport-complex {
+    animation: spaceportPulse 5s ease-in-out infinite;
+}
+
+@keyframes spaceportPulse {
+    0%, 100% { filter: drop-shadow(0 0 5px rgba(100, 200, 255, 0.8)); }
+    50% { filter: drop-shadow(0 0 8px rgba(100, 200, 255, 1)); }
+}
+
+/* Floating spaceships around the planet */
+.spaceship-float {
+    animation: shipFloat 8s ease-in-out infinite;
+}
+
+.spaceship-float-2 {
+    animation: shipFloat2 10s ease-in-out infinite;
+}
+
+.engine-glow {
+    animation: enginePulse 1s ease-in-out infinite;
+}
+
+@keyframes shipFloat {
+    0%, 100% { transform: translateY(0) rotate(10deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes shipFloat2 {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(8px) rotate(-10deg); }
+}
+
+@keyframes enginePulse {
+    0%, 100% { opacity: 0.7; box-shadow: 0 0 2px rgba(56, 189, 248, 0.8); }
+    50% { opacity: 1; box-shadow: 0 0 4px rgba(56, 189, 248, 1); }
+}
+
+/* Adding an additional glow to the planet container */
+.planet-container.glow {
+    box-shadow: 0 0 40px 15px rgba(56, 178, 255, 0.15);
+}
+
+/* Atmosphere effect */
+.atmosphere {
+    mix-blend-mode: screen;
+    opacity: 0.8;
+}
+
+/* Advanced network pulse */
+.advanced-network {
+    animation: networkPulse 8s linear infinite;
+}
+
+@keyframes networkPulse {
+    0%, 100% { stroke-dasharray: 2, 2; }
+    50% { stroke-dasharray: 3, 1; }
+}
+
+/* Base planet subtle pulsation to simulate "living world" */
+.base-planet {
+    animation: planetPulse 30s ease-in-out infinite;
+}
+
+@keyframes planetPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.01); }
+}
+
+/* Megacity blinking lights */
+.megacity {
+    animation: megacityPulse 6s ease-in-out infinite;
+}
+
+@keyframes megacityPulse {
+    0%, 100% { filter: drop-shadow(0 0 3px rgba(255, 230, 150, 0.6)); }
+    50% { filter: drop-shadow(0 0 5px rgba(255, 230, 150, 0.8)); }
+}
